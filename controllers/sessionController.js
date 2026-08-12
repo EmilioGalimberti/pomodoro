@@ -5,10 +5,22 @@ SRP sabe solo de su pantalla,
 
 import nextScreen from "../views/navigationView.js";
 import {startTimer , pauseTimer , resumeTimer } from "../services/timerService.js";
+import updateTimerDisplay from "../views/timerView.js";
 
 export function sessionController() {
-    const stopSessionButton = document.getElementById("stopSession");
-    
-    stopSessionButton.addEventListener("click", () => nextScreen("pomodoroSession", "menuScreen"));
+    const startPomodoroButton = document.getElementById("startTimer");
 
+    startPomodoroButton.addEventListener("click", () => {
+        startTimer(1500,onTick, onComplete);
+        console.log("click lcikc click  ")
+    });
 }   
+
+function onTick(remainingTime) {
+    updateTimerDisplay(remainingTime);
+}
+
+function onComplete() {
+    console.log("Timer completed!");
+
+}
