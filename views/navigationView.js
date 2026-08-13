@@ -6,7 +6,7 @@ Single Responability Principle: encargado de modificar el dom
 */
 
 // DRY principle: Don't Repeat Yourself
-export default function nextScreen(actualScreenId, nextScreenId) {
+export function nextScreen(actualScreenId, nextScreenId) {
     const actualScreenElement = document.getElementById(actualScreenId)
     const nextScreenElement = document.getElementById(nextScreenId)    
     if (actualScreenElement  && nextScreenElement ) {
@@ -15,3 +15,15 @@ export default function nextScreen(actualScreenId, nextScreenId) {
     }
 }
 
+
+export function hideButton(buttonElement) {
+    if (buttonElement) {
+        buttonElement.classList.add("hidden");
+    }
+}
+
+export function showButton(buttonElement) {
+    if (buttonElement) {
+        buttonElement.classList.remove("hidden");
+    }
+}
