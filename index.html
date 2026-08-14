@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="src/style/style.css">
+    <script type="module" src="src/app.js" defer></script>
+</head>
+<body>
+    <main>
+
+        <!-- 1. Header con título y acceso a Stats -->
+        <header>
+            <h1>Pomodoro</h1>
+            <button id="statsBtn">📊 Stats</button>
+        </header>
+
+        
+        <section id="pomodoroSession" >
+            <!-- Display del Reloj -->
+            <div id="timerDisplay">
+                <h2 id="timer"> 25:00</h2>
+            </div>
+            <!-- Controles -->
+            <nav>
+                <button id="startTimer">Start</button>
+                <button id="pauseTimer" class="hidden">Pause</button>
+                <button id="resumeTimer" class="hidden">Resume</button>
+            </nav>
+        </section>
+
+        <!-- 3. Pantalla de Stats (Oculta por defecto) -->
+        <section id="statsScreen" class="hidden">
+            <h2>Tus Estadísticas</h2>
+            <button id="backToTimerBtn">Volver al Timer</button>
+        </section>
+
+
+
+    </main>
+</body>
+</html>

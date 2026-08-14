@@ -3,7 +3,7 @@
 SRP sabe solo de su pantalla, 
 */
 
-import {nextScreen, hideButton, showButton } from "../views/navigationView.js";
+import {switchElement } from "../views/navigationView.js";
 import {startTimer , pauseTimer , resumeTimer } from "../services/timerService.js";
 import updateTimerDisplay from "../views/timerView.js";
 
@@ -12,22 +12,19 @@ export function sessionController() {
 
     startPomodoroButton.addEventListener("click", () => {
         startTimer(1500,onTick, onComplete);
-        hideButton(startPomodoroButton);
-        showButton(document.getElementById("pauseTimer"));
+        switchElement("startTimer", "pauseTimer");
     });
 
     const pausePomodoroButton = document.getElementById("pauseTimer");
     pausePomodoroButton.addEventListener("click", () => {
         pauseTimer();
-        hideButton(pausePomodoroButton);
-        showButton(document.getElementById("resumeTimer"));
+        switchElement("pauseTimer", "resumeTimer");
     });
 
     const resumePomodoroButton = document.getElementById("resumeTimer");
     resumePomodoroButton.addEventListener("click", () => {
         resumeTimer(onTick, onComplete);
-        hideButton(resumePomodoroButton);
-        showButton(document.getElementById("pauseTimer"));
+        switchElement("resumeTimer", "pauseTimer");
     });
 
 }   
