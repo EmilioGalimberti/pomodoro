@@ -9,7 +9,7 @@ import * as timerView  from "../views/timerView.js";
 export function sessionController() {
     // El controller no toca el DOM, solo asocia eventos:
         timerView.bindStartClick(() => {
-            startTimer(1500, onTick, onComplete);
+            startTimer(2, onTick, onComplete);
             timerView.showRunningState();
         });
     
@@ -31,5 +31,7 @@ function onTick(remainingTime) {
 
 function onComplete() {
     console.log("Timer completed!");
+    timerView.updateTimerDisplay(1500); // Reset the display to 00:00
+    timerView.showPausedState(); // Reset the buttons to the initial state
 
 }
