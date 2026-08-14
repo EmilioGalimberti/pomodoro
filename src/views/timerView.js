@@ -40,3 +40,9 @@ export function showPausedState() {
     pauseBtn.classList.add("hidden");
     resumeBtn.classList.remove("hidden");
 }
+
+export function showInitialState() {
+    startBtn.classList.remove("hidden");
+    pauseBtn.classList.add("hidden");
+    resumeBtn.classList.add("hidden");
+}
